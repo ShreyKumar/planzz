@@ -11,6 +11,13 @@ class Student(models.Model):
 
 class Lecture(models.Model):
 
+    l_name = models.CharField(max_length = 100)
+    l_code = models.CharField(max_length = 10)
+    l_instructor = models.CharField(max_length = 100)
+    l_capacity = models.IntegerField()
+    
+
+
     def __unicode__(self):
         pass
 
@@ -21,7 +28,8 @@ class Tutorial(models.Model):
     t_instructor = models.CharField(max_length=100)
     t_capacity = models.IntegerField()
     t_sTime = models.CharField(max_length=10)
+    t_length = models.IntegerField()
     t_Day = models.CharField(max_length=15)
 
     def __unicode__(self):
-        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day
+        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length
