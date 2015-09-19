@@ -14,12 +14,14 @@ class Lecture(models.Model):
     l_name = models.CharField(max_length = 100)
     l_code = models.CharField(max_length = 10)
     l_instructor = models.CharField(max_length = 100)
-    l_capacity = models.IntegerField()
+    l_cCapacity = models.IntegerField()
+    l_mCapacity = models.IntegerField()
+    l_pCapacity = (l_cCapacity / l_mCapacity) * 100
     
 
 
     def __unicode__(self):
-        return self.l_name + ' has a lecture code of ' + self.l_code + ' with instructor ' + self.l_instructor + ' with a '
+        return self.l_name + ' has a lecture code of ' + self.l_code + ' with instructor ' + self.l_instructor + ' with a current capacity' + self.l_cCapacity + '/' + self.l_mCapacity + ' at ' + self.l_pCapacity
 
 class Tutorial(models.Model):
 
@@ -35,4 +37,4 @@ class Tutorial(models.Model):
     t_Day = models.CharField(max_length=15)
 
     def __unicode__(self):
-        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length + ' and is currently filled at ' + self.t_cCapacity + ' out of ' + self.t_mCapacity + ' with a % of ' + self.t_pCapacity + '%'
+        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length + ' and is currently filled at ' + self.t_cCapacity + '/' + self.t_mCapacity + ' with a % of ' + self.t_pCapacity + '%'
