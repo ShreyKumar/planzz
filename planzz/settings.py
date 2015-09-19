@@ -15,6 +15,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -64,7 +66,9 @@ ROOT_URLCONF = 'planzz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,13 +95,12 @@ DATABASES = {
 }
 SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
 
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 
 MEDIA_ROOT = PROJECT_PATH + '/media/'
 
 STATIC_ROOT =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
 
-TEMPLATE_DIRS = (PROJECT_PATH + '/templates/',)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -121,4 +124,3 @@ STATIC_URL = '/static/'
 FACEBOOK_APP_ID = '507349916095512'
 
 FACEBOOK_APP_SECRET = 'f2b8ab18a41cd1db836bb6e6f5e53ce4'
-
