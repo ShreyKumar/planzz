@@ -2,6 +2,11 @@ body {
     font-family: 'Titillium Web', sans-serif;
     color: black;
 }
+/* color the table */
+table, tr, td, th {
+    color: white;
+    border: white 2px solid;
+}
 nav.navbar-default {
     margin-bottom: 0;
     box-shadow: none;
@@ -125,4 +130,8 @@ section.main.containersignup {
 .navbar-default .navbar-link:hover,
 .navbar-default .navbar-link{
     color: white;
+}
+
+#maintable {
+    margin-left: 20%;
 }

@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^signup$', views.signup),
     url(r'^login$', views.login),
-    url(r'^schedule$', views.schedule)
+    url(r'^schedule$', views.schedule),
+    url(r'^schedule/new$', views.addclass)
 ]

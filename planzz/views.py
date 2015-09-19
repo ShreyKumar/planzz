@@ -10,3 +10,5 @@ def login(request):
     return render_to_response('login.html')
 def schedule(request):
     return render_to_response('schedule.html')
+def addclass(request):
+    return render_to_response('addclass.html')

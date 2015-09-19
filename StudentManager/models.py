@@ -38,7 +38,6 @@ class Course(models.Model):
     def get_students(self):
         return self.students.all()
 
-<<<<<<< HEAD
     def save(self, *args, **kwargs):
         self.current_enrolment = self.student_set.count()
         super(Lecture, self).__init__(*args, **kwargs)
