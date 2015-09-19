@@ -15,6 +15,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -27,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+
+AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
 
 # Application definition
 
@@ -37,6 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_facebook'
+    'tastypie'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,12 +57,19 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'django_facebook.auth_backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 ROOT_URLCONF = 'planzz.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,6 +94,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+
+
+
+MEDIA_ROOT = PROJECT_PATH + '/media/'
+
+STATIC_ROOT =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
 
 
 # Internationalization
@@ -100,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+FACEBOOK_APP_ID = '507349916095512'
+
+FACEBOOK_APP_SECRET = 'f2b8ab18a41cd1db836bb6e6f5e53ce4'
