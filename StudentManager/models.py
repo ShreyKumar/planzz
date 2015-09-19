@@ -19,17 +19,20 @@ class Lecture(models.Model):
 
 
     def __unicode__(self):
-        pass
+        return self.l_name + ' has a lecture code of ' + self.l_code + ' with instructor ' + self.l_instructor + ' with a '
 
 class Tutorial(models.Model):
 
     t_name = models.CharField(max_length=100)
     t_code = models.CharField(max_length=10)
     t_instructor = models.CharField(max_length=100)
-    t_capacity = models.IntegerField()
+    t_cCapacity = models.IntegerField()
+    t_mCapacity = models.IntegerField()
+    t_pCapacity = (t_cCapacity / t_mCapacity) * 100
+
     t_sTime = models.CharField(max_length=10)
     t_length = models.IntegerField()
     t_Day = models.CharField(max_length=15)
 
     def __unicode__(self):
-        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length
+        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length + ' and is currently filled at ' + self.t_cCapacity + ' out of ' + self.t_mCapacity + ' with a % of ' + self.t_pCapacity + '%'
