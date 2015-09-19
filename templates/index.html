@@ -1,17 +1,29 @@
 <html>
     <head>
+        
+        {% load staticfiles %}
+        
         <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+        
+        <!-- Embed font-->
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        
+        <link href="{% static "css/font-awesome.css" %}" rel="stylesheet" type="text/css">
+        <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+        
 		<style type="text/css">
 			@import url(http://fonts.googleapis.com/css?family=Raleway:500);
 			body {
-				font-family: 'Raleway', sans-serif;
+                font-family: 'Titillium Web', sans-serif;
 				color: black;
 			}
+            nav.navbar-default {
+                margin-bottom: 0;   
+            }
 
             header .header-content {
                 position: relative;
@@ -33,6 +45,31 @@
             }
             .about {
                 padding: 50px 0;
+            }
+            
+            #main {
+                height: 100%;
+                background-color: rgba(46, 169, 223, 1);    
+            }
+            
+            .header {
+                //padding-top: 8%;
+                font-size: 65px;
+            }
+            
+            .sub-header {
+                font-size: 30px !important;
+            }
+            
+            .learn {
+                width: 400px;
+                height: 60px;
+                margin-top: 176px;
+                background-color: #265a88;
+                background-color: rgba(46, 169, 223, 1);
+                border: 3px solid #FFF;
+                color: #fff;
+                font-size: 30px;
             }
 		</style>
 
@@ -66,19 +103,27 @@
 		</nav>
 
         <header class="header">
-        <div class="header-content">
+        <div id="main" class="header-content">
             <div class="header-content-inner">
-                <h1>Welcome to Planzz</h1>
-                <hr>
-                <p>The fastest way to organize your schedule</p>
-                <a href="#test" class="btn btn-primary btn-xl page-scroll">Learn More</a>
+                <h1 class="header">Welcome to Planzz</h1>
+                <p class="sub-header">The fastest way to organize your schedule</p>
+                <a href="#details" class="btn learn">Learn More</a>
             </div>
         </div>
 
 
-        <section id="about" class="about">
-            <div id="test">
-                <p> this is a test section </p>
+        <section id="details" class="about container">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                
+                <div class="col-md-4">
+                
+                </div>
+                
+                <div class="col-md-4">
+                
+                </div>
             </div>
         </section>
     </header>
