@@ -10,10 +10,22 @@ class Student(models.Model):
 
 
 class Lecture(models.Model):
+    name = models.CharField(max_length=300)
+    code = models.CharField(max_length=30)
+    times = models.CharField(max_length=100)
+    website = models.URLField()
+    tutorial = models.ForeignKey('Tutorial')
+
 
     def __unicode__(self):
-        pass
+        return self.name
+
+    def get_students(self):
+        return self.student_set.all()
 
 class Tutorial(models.Model):
+    name = models.CharField(max_length=100)
+    time = models.CharField(max_length=100)
+
     def __unicode__(self):
-        pass
+        return self.name
