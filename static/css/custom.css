@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500);
+body {
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+nav.navbar-default {
+    margin-bottom: 0;   
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+}
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0,.7);
+}
+.about {
+    padding: 50px 0;
+}
+
+#main {
+    height: 100%;
+    background-color: rgba(46, 169, 223, 1);    
+}
+
+.header {
+    //padding-top: 8%;
+    font-size: 65px;
+}
+
+.sub-header {
+    font-size: 30px !important;
+}
+
+.learn {
+    width: 400px;
+    height: 60px;
+    margin-top: 176px;
+    background-color: #265a88;
+    background-color: rgba(46, 169, 223, 1);
+    border: 3px solid #FFF;
+    color: #fff;
+    font-size: 30px;
+}
+#details {
+    height: 470px;   
+}
+#features {
+    margin-left: 10px;
+
+}
+#features .col-md-4, #signupbtns .col-md-6 {
+    text-align: center;   
+}
+#signupbtns .col-md-6 a {
+    border: 3px solid #000;   
+}

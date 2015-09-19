@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^facebook$', include('django_facebook.urls')),
     url(r'^accounts$', include('django_facebook.auth_urls')),
     url(r'^$', views.index, name='index'),
+    url(r'^signup$', views.signup),
+    url(r'^login$', views.login),
 ]

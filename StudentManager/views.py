@@ -1,12 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
 
 def index(request):
-    return render_to_response('/static/index.html')
-
-def friends(request):
-    return render_to_response('/static/friends.html')
-
-def profile(request):
-    return render_to_response('/static/profile.html')
+    return render_to_response('index.html')
