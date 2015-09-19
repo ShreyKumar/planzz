@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Student(models.Model):
     id = models.IntegerField()
     name = models.CharField(max_length=100)
@@ -16,35 +17,42 @@ class Student(models.Model):
             student = lecture.enrolled[i].id;
             if student == self.id:
                 lecture.enrolled.pop(i)
-    
 
-class Lecture(models.Model):
 
-    id = models.IntegerField() #id of the lecture
-    name = models.CharField(max_length = 100)
-    code = models.CharField(max_length = 10)
-    instructor = models.CharField(max_length = 100)
-    cCapacity = models.IntegerField() #current capacity
-    mCapacity = models.IntegerField() #max capacity
-    pCapacity = (l_cCapacity / l_mCapacity) * 100
-    enrolled = []
-    
+
+
+class Course(models.Model):
+    name = models.CharField('Lecture Name', max_length=300)
+    code = models.CharField('Lecture Code', max_length=30)
+    # make custom field for lecture sessions and times
+    website = models.URLField('Lecture Website', blank=True)
+    tutorial = models.OneToOneField('Tutorial')
+    students = models.ManyToManyField(Student)
+    max_enrolment = models.IntegerField(default=50)
+    current_enrolment = models.IntegerField(blank=True)
+    instructor = models.CharField(default='TBA')
 
     def __unicode__(self):
-        return self.l_name + ' has a lecture code of ' + self.l_code + ' with instructor ' + self.l_instructor + ' with a current capacity' + self.l_cCapacity + '/' + self.l_mCapacity + ' at ' + self.l_pCapacity
+        return self.name
+
+    def get_students(self):
+        return self.students.all()
+
+<<<<<<< HEAD
+    def save(self, *args, **kwargs):
+        self.current_enrolment = self.student_set.count()
+        super(Lecture, self).__init__(*args, **kwargs)
 
 class Tutorial(models.Model):
-
     name = models.CharField(max_length=100)
-    code = models.CharField(max_length=10)
-    instructor = models.CharField(max_length=100)
-    cCapacity = models.IntegerField()
-    mCapacity = models.IntegerField()
-    pCapacity = (t_cCapacity / t_mCapacity) * 100
+    code = models.CharField('Tutorial Session')
+    # make custom field for lecture sessions and time
+    students = models.ManyToManyField(Student)
+    max_enrolment = models.IntegerField(default=30)
+    TA = models.CharField(default='TBA')
 
-    sTime = models.CharField(max_length=10)
-    length = models.IntegerField()
-    Day = models.CharField(max_length=15)
+    def save(self, *args, **kwargs):
+        pass
 
     def __unicode__(self):
-        return self.t_name + ' has a tutorial code of ' + self.t_code + ' with instructor ' + self.t_instructor + ' with a start time ' + self.t_sTime + ' on ' + self.t_Day + ' for ' + self.t_length + ' and is currently filled at ' + self.t_cCapacity + '/' + self.t_mCapacity + ' with a % of ' + self.t_pCapacity + '%'
+        return self.name
