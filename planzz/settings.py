@@ -91,9 +91,13 @@ DATABASES = {
 }
 SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
+MEDIA_ROOT = PROJECT_PATH + '/media/'
+
 STATIC_ROOT =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
 
-TEMPLATE_DIRS = ('planzz/templates/',)
+TEMPLATE_DIRS = (PROJECT_PATH + '/templates/',)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
