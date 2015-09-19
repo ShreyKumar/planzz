@@ -1,10 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:500);
 body {
     font-family: 'Titillium Web', sans-serif;
     color: black;
 }
 nav.navbar-default {
-    margin-bottom: 0;   
+    margin-bottom: 0;
+    box-shadow: none;
+    border: 0;
 }
 
 header .header-content {
@@ -29,7 +30,7 @@ header .header-content .header-content-inner p {
     padding: 50px 0;
 }
 
-#main {
+.main {
     height: 100%;
     background-color: rgba(46, 169, 223, 1);    
 }
@@ -37,6 +38,7 @@ header .header-content .header-content-inner p {
 .header {
     //padding-top: 8%;
     font-size: 65px;
+    text-align: center;
 }
 
 .sub-header {
@@ -65,4 +67,62 @@ header .header-content .header-content-inner p {
 }
 #signupbtns .col-md-6 a {
     border: 3px solid #000;   
+}
+form#signupform {
+    margin-left: 15%;
+    margin-top: 5%;
+}
+input.textfield {
+    margin-bottom: 2% !important;
+    width: 80%;
+    background-color: #2EA9DF !important;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff !important;
+    font-size: 30px;
+}
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #fff;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;  
+}
+
+:-ms-input-placeholder {  
+   color: #fff;  
+}
+h1.signup.header {
+    color: #fff;
+    margin-top: 0px;
+}
+#signup.btn.learn {
+    margin-top: 20px;
+    margin-left: 23%;
+}
+section.main.containersignup {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar */
+.navbar.navbar-default .container-fluid{
+    background-color: rgba(46, 169, 223, 1);
+    border-bottom: 2px solid #fff;
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-text, 
+.navbar-default .navbar-link:hover,
+.navbar-default .navbar-link{
+    color: white;
 }
