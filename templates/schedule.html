@@ -1,4 +1,5 @@
 <html>
+    
     <head>
         
         {% load staticfiles %}
@@ -33,7 +34,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/friends/">MA BUDDS</a></li>
+            <li><a href="/friends">MA BUDDS</a></li>
             <li><a href="/schedule/">My Schedule</a></li>
             <li><a href="/profile/">My Profile</a></li>
           </ul>
@@ -133,7 +134,9 @@
             
             <form action="post">
                 <select id="courses">
-                    <option class="None">Select a course</option>
+                    <option value="None">Select a course</option>
+                    <option value="csc309">CSC309</option>
+                    <option value="csc236">CSC236</option>
                 </select>
                 <input type="submit" name="add" id="add"/>
             </form>

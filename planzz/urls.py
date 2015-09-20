@@ -18,12 +18,12 @@ from django.contrib import admin
 from planzz import views
 
 urlpatterns = [
-    url(r'^admin$', include(admin.site.urls)),
-    url(r'^facebook$', include('django_facebook.urls')),
-    url(r'^accounts$', include('django_facebook.auth_urls')),
     url(r'^$', views.index, name='index'),
     url(r'^signup$', views.signup),
     url(r'^login$', views.login),
     url(r'^schedule$', views.schedule),
-    url(r'^schedule/new$', views.addclass)
+    url(r'^signupprocess$', views.signupprocess),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^loginprocess$', views.loginprocess),
+    url(r'^friends$', views.friends)
 ]

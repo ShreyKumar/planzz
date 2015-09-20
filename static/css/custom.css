@@ -1,3 +1,6 @@
+html {
+    background-color: rgba(46, 169, 223, 1);   
+}
 body {
     font-family: 'Titillium Web', sans-serif;
     color: black;
@@ -45,9 +48,14 @@ header .header-content .header-content-inner p {
     font-size: 65px;
     text-align: center;
 }
-
+h1.header {
+    margin-top: 0px;
+    padding-top: 127px;
+    color: #fff;
+}
 .sub-header {
     font-size: 30px !important;
+    color: #fff;
 }
 
 .learn {
@@ -134,4 +142,8 @@ section.main.containersignup {
 
 #maintable {
     margin-left: 20%;
+}
+#friendlist {
+    margin-left: 16%;
+    margin-bottom: 5%;
 }
