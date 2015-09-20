@@ -9,6 +9,9 @@ from templates import forms
 
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
+
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -36,9 +39,9 @@ def signupprocess(request):
     if form.is_valid():
         if form.cleaned_data['password'] == form.cleaned_data['confirm']:
             form.save()
-            return HttpResponse("ok")
+            return render_to_response('schedule.html')
     
-    return HttpResponse('not ok')
+    return render_to_response('signup.html')
     
     #print(email)
     #print(password)

@@ -9,6 +9,7 @@ body {
 table, tr, td, th {
     color: white;
     border: white 2px solid;
+    height: 70px;
 }
 nav.navbar-default {
     margin-bottom: 0;
@@ -146,4 +147,24 @@ section.main.containersignup {
 #friendlist {
     margin-left: 16%;
     margin-bottom: 5%;
+}
+#coursedetails {
+    margin-left: 20%;
+    color: #fff;
+}
+#courses {
+    background-color: #2EA9DF;
+    width: 70%;
+    height: 6%;
+    color: #fff;
+    border: 2px solid #FFF;
+    border-radius: 2px;
+    font-size: 22px;   
+}
+#signup.addclass {    
+    margin-left: 59px !important;
+    margin-bottom: 13px; 
+}
+a.learn.btn.register {
+    margin-top: 40px;   
 }

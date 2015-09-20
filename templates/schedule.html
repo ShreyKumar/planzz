@@ -28,15 +28,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Planzz</a>
+          <a class="navbar-brand" href="/">Planzz</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/friends">MA BUDDS</a></li>
-            <li><a href="/schedule/">My Schedule</a></li>
-            <li><a href="/profile/">My Profile</a></li>
+            <li><a href="/friends">My Friends</a></li>
+            <li><a href="/schedule">My Schedule</a></li>
+            <li><a href="/profile">My Profile</a></li>
           </ul>
         <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">NEEL</a></p>
         </div><!-- /.navbar-collapse -->
@@ -49,88 +49,88 @@
         <div id="maintable">
             <table width="70%" border="1">
                 <tr>
-                    <th></th>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
+                    <th width="3%"></th>
+                    <th width="9%">Sunday</th>
+                    <th width="7%">Monday</th>
+                    <th width="7%">Tuesday</th>
+                    <th width="7%">Wednesday</th>
+                    <th width="7%">Thursday</th>
+                    <th width="7%">Friday</th>
+                    <th width="7%">Saturday</th>
                 </tr>
                 <tr>
                     <th>9am</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="9sun"></td>
+                    <td class="9mon"></td>
+                    <td class="9tue"></td>
+                    <td class="9wed"></td>
+                    <td class="9thu"></td>
+                    <td class="9fri"></td>
+                    <td class="9sat"></td>
                 </tr>
                 <tr>
                     <th>10am</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="10sun"></td>
+                    <td class="10mon"></td>
+                    <td class="10tue"></td>
+                    <td class="10wed"></td>
+                    <td class="10thu"></td>
+                    <td class="10fri"></td>
+                    <td class="10sat"></td>
                 </tr>
                 <tr>
                     <th>11am</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="11sun"></td>
+                    <td class="11mon"></td>
+                    <td class="11tue"></td>
+                    <td class="11wed"></td>
+                    <td class="11thu"></td>
+                    <td class="11fri"></td>
+                    <td class="11sat"></td>
                 </tr>
                 <tr>
                     <th>12 noon</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="12sun"></td>
+                    <td class="12mon"></td>
+                    <td class="12tue"></td>
+                    <td class="12wed"></td>
+                    <td class="12thu"></td>
+                    <td class="12fri"></td>
+                    <td class="12sat"></td>
                 </tr>
                 <tr>
                     <th>1pm</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="1sun"></td>
+                    <td class="1mon"></td>
+                    <td class="1tue"></td>
+                    <td class="1wed"></td>
+                    <td class="1thu"></td>
+                    <td class="1fri"></td>
+                    <td class="1sat"></td>
                 </tr>
                 <tr>
                     <th>2pm</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="2sun"></td>
+                    <td class="2mon"></td>
+                    <td class="2tue"></td>
+                    <td class="2wed"></td>
+                    <td class="2thu"></td>
+                    <td class="2fri"></td>
+                    <td class="2sat"></td>
                 </tr>
                 <tr>
                     <th>3pm</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="3sun"></td>
+                    <td class="3mon"></td>
+                    <td class="3tue"></td>
+                    <td class="3wed"></td>
+                    <td class="3thu"></td>
+                    <td class="3fri"></td>
+                    <td class="3sat"></td>
                 </tr>
             </table>
             
-            <a href="#" id="signup" class="btn learn">Add a Class</a>
+            <a href="#" id="signup" class="btn learn addclass">Add a Class</a>
             
             <form action="post">
                 <select id="courses">
@@ -138,9 +138,17 @@
                     <option value="csc309">CSC309</option>
                     <option value="csc236">CSC236</option>
                 </select>
-                <input type="submit" name="add" id="add"/>
             </form>
-            
+            <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+            <script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+        </div>
+        
+        <div id="coursedetails">
+            <h1>CSC309 - Web and Internet programming</h1>
+            <h4>These people are in your courses:</h4>
+            <p>Bob Jones</p>
+            <p>Bill James</p>
+            <a class="learn btn register">Register for this course</a>
         </div>
         
     </section>
