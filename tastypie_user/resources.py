@@ -45,13 +45,12 @@ class UserResource(ModelResource):
 
 		if create_type == 'register':
 
-			username = bundle.data.pop('username')
 			password1 = bundle.data.pop('password1')
 			password2 = bundle.data.pop('password2')
 			email = bundle.data.pop('email')
 
 			if (password1 == password2):
-				new_user = User.objects.create_user(username, email, password1)
+				new_user = User.objects.create_user(email, password1)
 				new_user.save()
 				bundle.obj = new_user
 				raise ImmediateHttpResponse(http.HttpAccepted())

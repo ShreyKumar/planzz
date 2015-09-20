@@ -29,9 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
-
-AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
+# AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+#
+# AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
 
 # Application definition
 
@@ -42,8 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_facebook',
-    'tastypie'
+    # 'django_facebook',
+    'tastypie',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,11 +54,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
-    'django_facebook.auth_backends.FacebookBackend',
+    # 'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 

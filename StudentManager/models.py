@@ -38,7 +38,7 @@ class Course(models.Model):
     def get_students(self):
         return self.students.all()
 
-<<<<<<< HEAD
+
     def save(self, *args, **kwargs):
         self.current_enrolment = self.student_set.count()
         super(Lecture, self).__init__(*args, **kwargs)
@@ -56,3 +56,35 @@ class Tutorial(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class OAuthError(RuntimeError):
+    """Generic exception class."""
+    def __init__(self, message='OAuth error occured.'):
+        self.message = message
+
+
+from oauth2_provider.models import AccessToken
+
+def verify_access_token(key):
+    # Import the AccessToken model
+    # try:
+    # model = AccessToken
+    # model_parts = str(model).split('.')
+    # module_path = '.'.join(model_parts[:-1])
+    # module = __import__(module_path, globals(), locals(), ['AccessToken'])
+    # AccessToken = getattr(module, model_parts[-1])
+    # except:
+    #     raise OAuthError("Error importing AccessToken model")
+
+    # Check if key is in AccessToken key
+    try:
+        token = AccessToken.objects.get(token=key)
+
+        # Check if token has expired
+        if token.expires < timezone.now():
+            raise OAuthError('AccessToken has expired.')
+    except AccessToken.DoesNotExist:
+        raise OAuthError("AccessToken not found at all.")
+
+    return token
